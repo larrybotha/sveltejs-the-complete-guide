@@ -1,0 +1,10 @@
+
+name: sveltejs
+root: <%= Dir.pwd %>
+
+windows:
+  - frontend:
+      layout: main-vertical
+      panes:
+        - vim
+        -

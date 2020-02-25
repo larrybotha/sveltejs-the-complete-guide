@@ -1,0 +1,24 @@
+{
+  "name": "sveltejs-the-complete-guide",
+  "version": "1.0.0",
+  "description": "Notes and annotations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrybotha/sveltejs-the-complete-guide.git"
+  },
+  "author": "Larry Botha",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/larrybotha/sveltejs-the-complete-guide/issues"
+  },
+  "homepage": "https://github.com/larrybotha/sveltejs-the-complete-guide#readme",
+  "devDependencies": {
+    "doctoc": "^1.4.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7"
+  }
+}
