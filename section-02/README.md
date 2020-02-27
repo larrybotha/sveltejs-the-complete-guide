@@ -28,3 +28,8 @@ $ npm run dev --prefix ./12-reactive-variables
 ```bash
 $ npm run dev --prefix ./13-more-reactivity
 ```
+
+- reactive assignment on `if` statements only evaluates variables inside the
+    condition
+- if there are no variables in the condition, the compiler compiles to a
+    statement which only ever gets executed once if the condition is true
