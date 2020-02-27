@@ -15,8 +15,7 @@ $ npm run dev --prefix ./12-reactive-variables
 ```
 
 - instead of performing logic inside markup, abstract work to reactive variables
-  - Svelte even documents this in the built files:
-      [build.js#418](./12-reactive-variables/public/build/bundle.js)
+  - [build.js#418](./12-reactive-variables/public/build/bundle.js)
 - reactive variables are just variables; Svelte assigns a variable when using
     `$: reactVarName`, and invalidates the reactive variable so that when the
     variables associated with the reactive variable change, the reactive
