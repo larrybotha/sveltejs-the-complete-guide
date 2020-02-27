@@ -7,6 +7,7 @@
 - [12. Reactive Variables](#12-reactive-variables)
 - [13. More Reactivity](#13-more-reactivity)
 - [14. Binding to element properties](#14-binding-to-element-properties)
+- [15. Two-way binding shortcut](#15-two-way-binding-shortcut)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -47,3 +48,17 @@ $ npm run dev --prefix ./14-binding-to-element-properties
       value from the component
   - we can bind the input event to a handler using `on:input`, which can then
       update the name property, but only if we explicitly define it to do so
+
+
+## 15. Two-way binding shortcut
+
+```bash
+$ npm run dev --prefix ./15-two-way-binding-shortcut
+```
+
+- Svelte's `bind` syntax is useful for creating a 2-way binding between the
+    property of an element, and a variable
+- it eliminates the need to configure a binding on a property, and then create a
+    listener responsible for updating the associated variable
+- beware of overusing `bind`, as the explicit unidirectional bindings can help
+    with code readability
