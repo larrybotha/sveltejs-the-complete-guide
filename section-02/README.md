@@ -5,6 +5,7 @@
 **Table of Contents**
 
 - [12. Reactive Variables](#12-reactive-variables)
+- [13. More Reactivity](#13-more-reactivity)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -21,3 +22,14 @@ $ npm run dev --prefix ./12-reactive-variables
     variables associated with the reactive variable change, the reactive
     variable is updated accordingly
 - `$: ` is called a _labeled statement_
+
+## 13. More Reactivity
+
+```bash
+$ npm run dev --prefix ./13-more-reactivity
+```
+
+- reactive assignment on `if` statements only evaluates variables inside the
+    condition
+- if there are no variables in the condition, the compiler compiles to a
+    statement which only ever gets executed once if the condition is true
