@@ -8,6 +8,7 @@
 - [13. More Reactivity](#13-more-reactivity)
 - [14. Binding to element properties](#14-binding-to-element-properties)
 - [15. Two-way binding shortcut](#15-two-way-binding-shortcut)
+- [16. Using multiple components](#16-using-multiple-components)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -62,3 +63,10 @@ $ npm run dev --prefix ./15-two-way-binding-shortcut
     listener responsible for updating the associated variable
 - beware of overusing `bind`, as the explicit unidirectional bindings can help
     with code readability
+
+## 16. Using multiple components
+
+```bash
+$ npm run dev --prefix ./16-using-multiple-components
+```
+
