@@ -11,6 +11,7 @@
 - [16. Using multiple components](#16-using-multiple-components)
 - [17. Components and communication via props](#17-components-and-communication-via-props)
 - [18. Diving deeper into bindings](#18-diving-deeper-into-bindings)
+- [20. Outputting HTML content](#20-outputting-html-content)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -89,3 +90,13 @@ $ npm run dev --prefix ./18-diving-deeper-into-bindings
 
 - `textarea` binds to `value` in the same way that `input` does. This is
     different from React
+
+## 20. Outputting HTML content
+
+```bash
+$ npm run dev --prefix ./20-outputting-html-content
+```
+
+- Svelte encodes HTML output by default
+- to output HTML content, use the `{@html htmlString}` helper
+- sanitization of data is important here
