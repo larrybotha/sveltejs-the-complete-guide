@@ -97,4 +97,6 @@ $ npm run dev --prefix ./18-diving-deeper-into-bindings
 $ npm run dev --prefix ./20-outputting-html-content
 ```
 
-
+- Svelte encodes HTML output by default
+- to output HTML content, use the `{@html htmlString}` helper
+- sanitization of data is important here
