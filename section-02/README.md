@@ -6,6 +6,7 @@
 
 - [12. Reactive Variables](#12-reactive-variables)
 - [13. More Reactivity](#13-more-reactivity)
+- [14. Binding to element properties](#14-binding-to-element-properties)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -33,3 +34,16 @@ $ npm run dev --prefix ./13-more-reactivity
     condition
 - if there are no variables in the condition, the compiler compiles to a
     statement which only ever gets executed once if the condition is true
+
+## 14. Binding to element properties
+
+```bash
+$ npm run dev --prefix ./14-binding-to-element-properties
+```
+
+- data flow in Svelte is by default unidirectional
+  - if we bind the `value` attribute on an `input` to only the `name` variable,
+      updating the input has no effect, because the input is only receiving the
+      value from the component
+  - we can bind the input event to a handler using `on:input`, which can then
+      update the name property, but only if we explicitly define it to do so
