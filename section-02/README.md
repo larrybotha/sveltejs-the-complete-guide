@@ -5,6 +5,7 @@
 **Table of Contents**
 
 - [12. Reactive Variables](#12-reactive-variables)
+- [13. More Reactivity](#13-more-reactivity)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -21,3 +22,9 @@ $ npm run dev --prefix ./12-reactive-variables
     variables associated with the reactive variable change, the reactive
     variable is updated accordingly
 - `$: ` is called a _labeled statement_
+
+## 13. More Reactivity
+
+```bash
+$ npm run dev --prefix ./13-more-reactivity
+```
