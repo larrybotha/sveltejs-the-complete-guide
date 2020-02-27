@@ -77,3 +77,5 @@ $ npm run dev --prefix ./16-using-multiple-components
 $ npm run dev --prefix ./17-components-and-communication-via-props
 ```
 
+- `export` is required in order to allow containing components to pass props
+    into components
