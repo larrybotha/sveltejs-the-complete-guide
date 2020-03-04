@@ -100,3 +100,11 @@ $ npm run dev --prefix ./20-outputting-html-content
 - Svelte encodes HTML output by default
 - to output HTML content, use the `{@html htmlString}` helper
 - sanitization of data is important here
+    - an XSS attack can be simulated by adding HTML content into a textarea that
+        will be executed by the browser:
+
+        ```html
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          onload="alert('You were hacked!');">
+        ```
