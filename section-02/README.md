@@ -12,6 +12,7 @@
 - [17. Components and communication via props](#17-components-and-communication-via-props)
 - [18. Diving deeper into bindings](#18-diving-deeper-into-bindings)
 - [20. Outputting HTML content](#20-outputting-html-content)
+- [22. Setting dynamic classes](#22-setting-dynamic-classes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -108,3 +109,24 @@ $ npm run dev --prefix ./20-outputting-html-content
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           onload="alert('You were hacked!');">
         ```
+
+## 22. Setting dynamic classes
+
+```bash
+$ npm run dev --prefix ./22-setting-dynamic-classes
+```
+
+- a naive way to add conditonal classes to elements is by using ternaries:
+
+    ```svelte
+    <div class="my-class {someCondition ? 'conditional-class' : ''}">
+      content
+    </div>
+    ```
+- an easier way to manage this is by using the `class:[className]` shorthand:
+
+    ```svelte
+    <div class="my-class" class:conditional-class={someCondition}>
+      content
+    </div>
+    ```
