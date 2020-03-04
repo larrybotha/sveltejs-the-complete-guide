@@ -8,6 +8,8 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
 
 - [Section 2: Base Syntax & Core Features](#section-2-base-syntax--core-features)
   - [Takeaways](#takeaways)
+- [Section 3: Working with conditionals and loops](#section-3-working-with-conditionals-and-loops)
+  - [Takeaways](#takeaways-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -25,3 +27,10 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
     the values inside the configuration section of the statement are evaluated
     and invalidated when a variable's value changes
 - one should favour using reactive assignments to reduce logic inside templates
+
+
+## Section 3: Working with conditionals and loops
+
+[README.md](./section-03/README.md)
+
+### Takeaways
