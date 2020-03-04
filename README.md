@@ -16,3 +16,12 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
 [README.md](./section-02/README.md)
 
 ### Takeaways
+
+- by default, Svelte binds properties uni-directionally
+- `bind:[attribute]={someVar}` is a shortcut for 2-way binding
+- 2-way binding should be used with caution; think of the Angular 1 nightmares
+- inspecting the compiled javascript is useful
+- reactive statements do not react to changes in the body of the statment; only
+    the values inside the configuration section of the statement are evaluated
+    and invalidated when a variable's value changes
+- one should favour using reactive assignments to reduce logic inside templates
