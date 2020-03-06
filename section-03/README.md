@@ -8,6 +8,7 @@
 - [29. `each`, `else`, and extracting the index](#29-each-else-and-extracting-the-index)
 - [30. Lists and keys](#30-lists-and-keys)
 - [35. Updating arrays and objects immutably](#35-updating-arrays-and-objects-immutably)
+- [36. Understanding event modifiers](#36-understanding-event-modifiers)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -51,3 +52,35 @@ $ npm run dev --prefix ./35-updating-arrays-and-objects-immutably
     work in Svelte
 - the `=` sign when reassigning values to variables is a trigger for Svelte to
     reactively update a variable
+
+## 36. Understanding event modifiers
+
+- event modifiers are added to event handlers by delimiting them from the event
+    name with a pipe
+
+    ```svelte
+    <button on:click:preventDefault={handleClick}>default prevented</button>
+    ```
+- Svelte has the following modifiers availeble:
+    - `once`
+    - `preventDefault`
+    - `stopPropagation`
+    - `capture`
+    - `passive`
+- event modifiers are shorthand for configuring and handling events:
+
+    ```svelte
+    <button on:click|preventDefault={handleClick}></button>
+    ```
+
+    is equivalent to
+
+    ```svelte
+    <script>
+      function handleClick(e) {
+        e.preventDefault();
+      }
+    </script>
+
+    <button on:click={handleClick}></button>
+    ```
