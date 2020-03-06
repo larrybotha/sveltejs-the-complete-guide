@@ -9,6 +9,7 @@
 - [30. Lists and keys](#30-lists-and-keys)
 - [35. Updating arrays and objects immutably](#35-updating-arrays-and-objects-immutably)
 - [36. Understanding event modifiers](#36-understanding-event-modifiers)
+- [37. Using inline functions](#37-using-inline-functions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -88,3 +89,12 @@ $ npm run dev --prefix ./36-understanding-event-modifiers
 
     <button on:click={handleClick}></button>
     ```
+
+## 37. Using inline functions
+
+```bash
+$ npm run dev --prefix ./37-using-inline-functions
+```
+
+- Svelte allows one to use inline functions for event handlers without any
+    performance impact that other frameworks may suffer from
