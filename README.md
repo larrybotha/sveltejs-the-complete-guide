@@ -10,6 +10,7 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
   - [Takeaways](#takeaways)
 - [Section 3: Working with conditionals and loops](#section-3-working-with-conditionals-and-loops)
   - [Takeaways](#takeaways-1)
+- [Section 4: Course Project - First Steps](#section-4-course-project---first-steps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -47,3 +48,5 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
     ```svelte
     <button on:click|preventDefault={handleClick}>a button</button>
     ```
+
+## Section 4: Course Project - First Steps
