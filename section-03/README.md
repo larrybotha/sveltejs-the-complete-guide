@@ -55,6 +55,10 @@ $ npm run dev --prefix ./35-updating-arrays-and-objects-immutably
 
 ## 36. Understanding event modifiers
 
+```bash
+$ npm run dev --prefix ./36-understanding-event-modifiers
+```
+
 - event modifiers are added to event handlers by delimiting them from the event
     name with a pipe
 
