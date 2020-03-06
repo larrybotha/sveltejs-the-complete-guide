@@ -7,6 +7,7 @@
 
 - [29. `each`, `else`, and extracting the index](#29-each-else-and-extracting-the-index)
 - [30. Lists and keys](#30-lists-and-keys)
+- [35. Updating arrays and objects immutably](#35-updating-arrays-and-objects-immutably)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -38,3 +39,15 @@ $ npm run dev --prefix ./30-lists-and-keys
       // do stuff
     {/each}
     ```
+
+## 35. Updating arrays and objects immutably
+
+```bash
+$ npm run dev --prefix ./35-updating-arrays-and-objects-immutably
+```
+
+- Svelte only invalidates variables when they are updated immutably through
+    assignment. Attempting to mutate objects, such as with `[].push`, will not
+    work in Svelte
+- the `=` sign when reassigning values to variables is a trigger for Svelte to
+    reactively update a variable
