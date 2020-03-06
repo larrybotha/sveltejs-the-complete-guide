@@ -34,3 +34,16 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
 [README.md](./section-03/README.md)
 
 ### Takeaways
+
+- Svelte uses `=` as an indication that a variable should be reactively updated.
+    Variables that are updated using mutable operators, such as `[].unshift`
+    will not result in those values being invalidated and updated
+
+    - to see this, inspect the built js - variables that are reassigned are
+        invalidated, non-reassigned variables are not invalidated
+- Svelte allows for some event shortcuts via event modifiers which can be added
+    via piped arguments after the event name:
+
+    ```svelte
+    <button on:click|preventDefault={handleClick}>a button</button>
+    ```
