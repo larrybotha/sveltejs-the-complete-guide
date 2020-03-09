@@ -7,6 +7,7 @@
 
 - [57. Event forwarding](#57-event-forwarding)
 - [58. Emitting custom events](#58-emitting-custom-events)
+- [59. Using spread props and default props](#59-using-spread-props-and-default-props)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -78,3 +79,15 @@ $ npm run dev --prefix ./58-emitting=custom-events
       return e;
     }
     ```
+
+## 59. Using spread props and default props
+
+```bash
+$ npm run dev --prefix ./59-using-spread-props-and-default-props
+```
+
+- if a component isn't provided a default value for a prop, and that prop isn't
+    provided, Svelte will output a warning in the console
+
+    - provide defaults for optional props
+
