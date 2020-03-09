@@ -10,7 +10,8 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
   - [Takeaways](#takeaways)
 - [Section 3: Working with conditionals and loops](#section-3-working-with-conditionals-and-loops)
   - [Takeaways](#takeaways-1)
-- [Section 4: Course Project - First Steps](#section-4-course-project---first-steps)
+- [Section 5: Course Project - First Steps](#section-5-course-project---first-steps)
+- [Section 6: Diving deeper into components](#section-6-diving-deeper-into-components)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -49,4 +50,11 @@ Notes and annotations from https://www.udemy.com/course/sveltejs-the-complete-gu
     <button on:click|preventDefault={handleClick}>a button</button>
     ```
 
-## Section 4: Course Project - First Steps
+## Section 5: Course Project - First Steps
+
+[README.md](./section-05/README.md)
+
+
+## Section 6: Diving deeper into components
+
+[README.md](./section-06/README.md)
