@@ -8,6 +8,8 @@
 - [57. Event forwarding](#57-event-forwarding)
 - [58. Emitting custom events](#58-emitting-custom-events)
 - [59. Using spread props and default props](#59-using-spread-props-and-default-props)
+- [60. Working with slots](#60-working-with-slots)
+- [61. Named and default slots](#61-named-and-default-slots)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -91,3 +93,31 @@ $ npm run dev --prefix ./59-using-spread-props-and-default-props
 
     - provide defaults for optional props
 
+
+## 60. Working with slots
+
+- slots are an HTML standard
+
+    ```html
+    <slot name="slot-name">
+    ```
+
+## 61. Named and default slots
+
+- components allow for named slots:
+
+    ```svelte
+    // parent.svelte
+
+    <Child>
+      <header slot="header">header text</header>
+    </Child>
+
+    // child.svelte
+
+    <div>
+      <slot name="header">
+        <header>fallback content</header>
+      </slot>
+    </div>
+    ```
