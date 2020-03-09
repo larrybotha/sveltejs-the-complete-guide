@@ -105,3 +105,13 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+- events that are not provided a handler are forwarded; i.e. the component where
+    the handler would be defined does not handle the event
+
+    ```svelte
+    <button on:click>forwarded click</button>
+    ```
+- by default, events do not get forwarded; events do no propagate across
+    component boundaries unless explicitly defined to do so
+- event delegation within a component works as expected
