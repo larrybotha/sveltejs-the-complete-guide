@@ -121,3 +121,11 @@ $ npm run dev --prefix ./59-using-spread-props-and-default-props
       </slot>
     </div>
     ```
+- the existence of a named slot can be evaluated using the non-standard
+    `$$props.$$slots` property:
+
+    ```svelte
+    {#if $$props.$$slots.header}
+      <slot name="header" />
+    {/if}
+    ```
