@@ -33,4 +33,38 @@ $ npm run dev --prefix ./57-event-forwarding
 $ npm run dev --prefix ./58-emitting=custom-events
 ```
 
--
+- if multiple elements inside a single component emit the same event, then the
+    parent component will need to use the `event` object received in the handler
+    to determine which element emitted the event
+
+    ```svelte
+    <!--
+      Both buttons forward the same event
+    -->
+    <button on:click>button 1</button>
+    <button on:click>button 2</button>
+    ```
+- to address this, we can dispatch custom events using Svelte's
+    `createEventDispatcher` helper
+
+    ```svelte
+    <script>
+      import {createEventDispatcher} from 'svelte';
+
+      const dispatch = createEventDispatcher();
+    </script>
+
+    <button on:click={() => dispatch('event 1', 'my data')}>button 1</button>
+    <button on:click={() => dispatch('event 2', ['my data'])}>button 2</button>
+    ```
+- `dispatch` takes 2 arguments:
+
+    - the name of the event
+    - an optional data parameter which is received by the handler in the
+        component listening to the event
+- the component listening to the event subscribes to events using the same
+    syntax as for built-in events:
+
+    ```svelte
+    <MyComponent on:my-custom-event={handleEvent}>
+    ```
