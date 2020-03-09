@@ -68,3 +68,13 @@ $ npm run dev --prefix ./58-emitting=custom-events
     ```svelte
     <MyComponent on:my-custom-event={handleEvent}>
     ```
+- `createEventDispatcher` is a wrapper around Javascript's `customEvent` method:
+
+    ```javascript
+    function custom_event(type, detail) {
+      const e = document.createEvent('CustomEvent');
+      e.initCustomEvent(type, false, false, detail);
+
+      return e;
+    }
+    ```
