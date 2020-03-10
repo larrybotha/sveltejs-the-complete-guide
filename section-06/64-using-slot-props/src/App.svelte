@@ -29,10 +29,7 @@
 <button on:click={() => (showModal = true)}>Show Modal</button>
 
 {#if showModal}
-  <Modal
-    on:cancel={() => (showModal = false)}
-    on:close={() => (showModal = false)}
-    <!--
+  <!--
     didAgree is a property bound specifically onto the 'footer' named slot inside
     Modal
 
@@ -43,7 +40,10 @@
 
     Even though the prop is defined on the named slot, we bind the value of the prop
     on the component instance, and not on the slot itself
-    -->
+  -->
+  <Modal
+    on:cancel={() => (showModal = false)}
+    on:close={() => (showModal = false)}
     let:didAgree={closeable}>
     <h1 slot="header">Hello!</h1>
 
