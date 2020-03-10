@@ -10,6 +10,7 @@
 - [59. Using spread props and default props](#59-using-spread-props-and-default-props)
 - [60. Working with slots](#60-working-with-slots)
 - [61. Named and default slots](#61-named-and-default-slots)
+- [64. Using slot props](#64-using-slot-props)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -129,3 +130,10 @@ $ npm run dev --prefix ./59-using-spread-props-and-default-props
       <slot name="header" />
     {/if}
     ```
+
+## 64. Using slot props
+
+```bash
+$ npm run dev --prefix ./64-using-slot-props
+```
+
