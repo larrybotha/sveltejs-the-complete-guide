@@ -10,6 +10,7 @@
 - [59. Using spread props and default props](#59-using-spread-props-and-default-props)
 - [60. Working with slots](#60-working-with-slots)
 - [61. Named and default slots](#61-named-and-default-slots)
+- [64. Using slot props](#64-using-slot-props)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -129,3 +130,21 @@ $ npm run dev --prefix ./59-using-spread-props-and-default-props
       <slot name="header" />
     {/if}
     ```
+
+## 64. Using slot props
+
+```bash
+$ npm run dev --prefix ./64-using-slot-props
+```
+
+- slot props are a way to expose a prop that is specific to a slot to the parent
+    component of the component containing the slot. This allows the containing
+    component to bind a value in itself to the prop defined on the slot
+- the binding of a slot prop requires Svelte's `let:my-slot-prop` syntax:
+
+    ```svelte
+    <MyComp let:my-slot-prop={someValue}>
+      <slot name='some-slot-with-slot-prop'>
+    </MyComp>
+- for unnamed slots, the slot prop is bound on the component instance
+- for named slots, the slot prop is bound on the slot itself
