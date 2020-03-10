@@ -137,3 +137,14 @@ $ npm run dev --prefix ./59-using-spread-props-and-default-props
 $ npm run dev --prefix ./64-using-slot-props
 ```
 
+- slot props are a way to expose a prop that is specific to a slot to the parent
+    component of the component containing the slot. This allows the containing
+    component to bind a value in itself to the prop defined on the slot
+- the binding of a slot prop requires Svelte's `let:my-slot-prop` syntax:
+
+    ```svelte
+    <MyComp let:my-slot-prop={someValue}>
+      <slot name='some-slot-with-slot-prop'>
+    </MyComp>
+- for unnamed slots, the slot prop is bound on the component instance
+- for named slots, the slot prop is bound on the slot itself
