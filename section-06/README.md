@@ -11,6 +11,7 @@
 - [60. Working with slots](#60-working-with-slots)
 - [61. Named and default slots](#61-named-and-default-slots)
 - [64. Using slot props](#64-using-slot-props)
+- [65. The component lifecycle](#65-the-component-lifecycle)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -151,3 +152,40 @@ $ npm run dev --prefix ./64-using-slot-props
 - for unnamed slots, the slot prop is bound on the component instance
 - for named slots, the slot prop is bound on the element binding itself to that
   specific slot itself
+
+## 65. The component lifecycle
+
+- a Svelte component's lifecycle can be evaluated as 2 distinct ideas with their
+  own events
+    - component creation / destruction
+    - component updates
+- when a component is rendered into the DOM, code is executed in the following 3
+  ways:
+    - `<script>` execution
+      - code here is executed whenever a component is rendered into the DOM
+      - this is where basic initialisation occurs, too
+    - `onMount()`
+      - runs a callback as soon as the component is mounted
+      - this is where binding 3rd party libraries to a DOM node would occur
+      - this method is also useful for initiating requests
+      - if a function is returned, it will be called when the component is
+      unmounted
+    - `onDestroy()`
+      - runs a provided callback once a component has been umounted
+      - this is where component cleanup will go
+- once a component is mounted, we have the following lifecycle methods available
+  to us:
+    - `beforeUpdate()`
+      - runs a callback before the component is updated from state changing
+      - the first time `beforeUpdate` is called is before `onMount` is called
+    - `afterUpdate()`
+      - runs a callback after a component is updated as a result of a state
+      change
+      - useful for situations where some side effect needs to be executed, such
+      as scrolling the window after a component is updated
+    - `tick()`
+      - a function that returns a promise once any pending state changes have
+      been applied
+      - this is useful if you want to do some computation without it occurring
+      during updates, and the `beforeUpdate` and `afterUpdate` lifecycle methods
+      may not be sufficient on their own
