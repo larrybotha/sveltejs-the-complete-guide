@@ -11,7 +11,6 @@
   ];
 
   let showModal = false;
-  let closeable = false;
 
   function addToCart(event) {
     console.log(event);
@@ -37,13 +36,10 @@
     <p>This works!</p>
 
     <!--
-    didAgree is a property bound specifically onto the 'footer' named slot inside
-    Modal
+      didAgree is a prop defind on the footer slot inside Modal
 
-    It is exposed to this component because it is set as a prop on the named slot
-
-    By exposing that prop, we can bind the value of that prop to a value inside this
-    file
+      By using Svelte's let syntax, we can get access to the value bound to that prop
+      in the parent component
   -->
     <button
       let:didAgree={closeable}
