@@ -12,6 +12,7 @@
 - [61. Named and default slots](#61-named-and-default-slots)
 - [64. Using slot props](#64-using-slot-props)
 - [65. The component lifecycle](#65-the-component-lifecycle)
+- [66. Creation and update lifecycle hooks in action](#66-creation-and-update-lifecycle-hooks-in-action)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -189,3 +190,9 @@ $ npm run dev --prefix ./64-using-slot-props
       - this is useful if you want to do some computation without it occurring
       during updates, and the `beforeUpdate` and `afterUpdate` lifecycle methods
       may not be sufficient on their own
+
+## 66. Creation and update lifecycle hooks in action
+
+```bash
+$ npm run dev --prefix ./66-creation-and-update-lifecycle-hooks-in-action
+```
