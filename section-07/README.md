@@ -7,6 +7,7 @@
 
 - [71. Adding default props](#71-adding-default-props)
 - [72. Communicating via custom events](#72-communicating-via-custom-events)
+- [73. Creating an 'EditMeetup' Component](#73-creating-an-editmeetup-component)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -26,3 +27,13 @@ $ npm run dev --prefix ./72-communicating-via-custom-props
 
 - a component can dispatch custom events if its containing component is
     forwarding the event the custom event is triggered by
+
+## 73. Creating an 'EditMeetup' Component
+
+```bash
+$ npm run dev --prefix ./73-creating-an-editmeetup-component
+```
+
+- instead of simply forwarding a form's `submit` event, we can dispatch custom
+    events.
+  - this may be useful in state machines where we may want to cancel a request
