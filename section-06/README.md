@@ -196,3 +196,19 @@ $ npm run dev --prefix ./64-using-slot-props
 ```bash
 $ npm run dev --prefix ./66-creation-and-update-lifecycle-hooks-in-action
 ```
+
+- script initialisation runs before any other lifecycle hooks when a component is
+    mounting
+- `beforeUpdate` then runs, and runs before any subsequent update to state
+- `onMount` follows `beforeUpdate`, but only once when the component is mounted
+- `afterUpdate` runs after `onMount`, and after any subsequent update to state
+- `tick` is essentially the same as `wait()` in `react-testing-library`; it is
+    an async function that can be used to delay the execution of otherwise
+    synchronous code, such as a sequence of function executions inside
+    `beforeUpdate`, in order to execute actions at the end of the current tick
+    instead of executing actions in the next tick
+    - the example in Svelte's docs demonstrates how selected text can be
+        mutated, while retaining the selection. The trick is that the selection
+        isn't really retained; at the end of the tick the selection is lost, but
+        by using `tick` one can execute actions that require the state in the
+        current tick without having to store that state to handle elsewhere
