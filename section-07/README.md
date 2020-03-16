@@ -6,6 +6,7 @@
 **Table of Contents**
 
 - [71. Adding default props](#71-adding-default-props)
+- [72. Communicating via custom events](#72-communicating-via-custom-events)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -16,3 +17,12 @@
 - it's a good practice to provide a default for optional props, even if that
     default is `null`, to indicate both to Svelte and consumers of components
     that a prop is optional
+
+## 72. Communicating via custom events
+
+```bash
+$ npm run dev --prefix ./72-communicating-via-custom-props
+```
+
+- a component can dispatch custom events if its containing component is
+    forwarding the event the custom event is triggered by
