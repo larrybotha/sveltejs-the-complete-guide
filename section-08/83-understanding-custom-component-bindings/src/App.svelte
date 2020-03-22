@@ -2,20 +2,20 @@
   import CustomInput from "./custom-input.svelte";
   import Toggle from "./toggle.svelte";
 
-  let val = "Joe Soap";
-  let curr = 1;
+  let valInParent = "Joe Soap";
+  let currentInParent = 1;
 
-  $: console.log(val);
-  $: console.log(curr);
+  $: console.log(valInParent);
+  $: console.log(currentInParent);
 </script>
 
-<CustomInput bind:val />
+<CustomInput bind:valInChild={valInParent} />
 
 <!--
   We can bind to `current` inside the Toggle, and get values here
 
   This is a two-way component binding, and is strongly discouraged, as it makes
-  debugging difficult
+  debugging difficult - think Angular 1
 -->
-<Toggle bind:current={curr} />
+<Toggle ariaHidden={currentInParent === 1} bind:current={currentInParent} />
 
