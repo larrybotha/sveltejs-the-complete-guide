@@ -5,18 +5,10 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [71. Adding default props](#71-adding-default-props)
 - [82. Two-way binding refresher](#82-two-way-binding-refresher)
+- [83. Understanding custom component bindings](#83-understanding-custom-component-bindings)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## 71. Adding default props
-
-- if a prop isn't required to be passed into a component, and none is passed,
-    Svelte will emit a warning
-- it's a good practice to provide a default for optional props, even if that
-    default is `null`, to indicate both to Svelte and consumers of components
-    that a prop is optional
 
 ## 82. Two-way binding refresher
 
@@ -45,3 +37,57 @@ $ npm run dev --prefix ./82-two-way-binding-reffresher
 
     <input type="text" bind:value>
     ```
+
+## 83. Understanding custom component bindings
+
+```bash
+$ npm run dev --prefix ./83-understanding-custom-component-bindings
+```
+
+- two-way component binding can be configured via a parent component using the
+    `bind` keyword on the child component
+
+    ```svelte
+    // child.svelte
+    <script>
+      export let valInChild;
+    </script>
+
+    <input type="text" bind:value={valInChild} />
+
+    // parent.svelte
+    <script>
+      import Child from './child.svelte'
+
+      let valInParent;
+
+      $: console.log(valInParent)
+    </script>
+
+    <Child bind:valInChild={valInParent} />
+    ```
+- components that make use of two-way binding internally can't accept other
+    props - this is not supported by Svelte
+
+    ```svelte
+    // child.svelte
+    <script>
+    export let valInChild;
+
+    /**
+     * Svelte will throw an error here because valInChild has a two-way binding
+     */
+    export let type = 'text';
+    </script>
+
+    <input {type} bind:value={valInChild} />
+
+    // parent.svelte
+    <script>
+    import Child from './child.svelte'
+    </script>
+
+    <Child type="email" />
+    ```
+- components that don't use two-way binding internally may have dynamic
+    properties
