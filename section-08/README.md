@@ -7,6 +7,7 @@
 
 - [82. Two-way binding refresher](#82-two-way-binding-refresher)
 - [83. Understanding custom component bindings](#83-understanding-custom-component-bindings)
+- [84. Relying on automatic number conversion](#84-relying-on-automatic-number-conversion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -91,3 +92,12 @@ $ npm run dev --prefix ./83-understanding-custom-component-bindings
     ```
 - components that don't use two-way binding internally may have dynamic
     properties
+
+## 84. Relying on automatic number conversion
+
+```bash
+$ npm run dev --prefix ./84-relying-on-automatic-number-conversion
+```
+
+- for inputs of type number, if the value is 2-way bound, Svelte will convert
+    the value from the default `string` type to `number`
