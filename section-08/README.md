@@ -9,6 +9,7 @@
 - [83. Understanding custom component bindings](#83-understanding-custom-component-bindings)
 - [84. Relying on automatic number conversion](#84-relying-on-automatic-number-conversion)
 - [85. Binding checkboxes and radio buttons](#85-binding-checkboxes-and-radio-buttons)
+- [86. Binding `<select>` dropdowns](#86-binding-select-dropdowns)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -166,3 +167,12 @@ $ npm run dev --prefix ./85-binding-checkboxes-and-radio-buttons
       value 3
     </label>
     ```
+
+## 86. Binding `<select>` dropdowns
+
+```bash
+$ npm run dev --prefix ./86-binding-select-dropdowns
+```
+
+- `select` bind to the value attribute in the same way text inputs are
+- the values of `option` elements can be strings, or objects
