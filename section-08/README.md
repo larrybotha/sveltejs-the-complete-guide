@@ -11,6 +11,7 @@
 - [85. Binding checkboxes and radio buttons](#85-binding-checkboxes-and-radio-buttons)
 - [86. Binding `<select>` dropdowns](#86-binding-select-dropdowns)
 - [87. Binding to element references](#87-binding-to-element-references)
+- [88. Binding to component references](#88-binding-to-component-references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -19,6 +20,8 @@
 ```bash
 $ npm run dev --prefix ./82-two-way-binding-reffresher
 ```
+
+[App.svelte](./82-two-way-binding-reffresher/src/App.svelte)
 
 - a shortcut for binding a value to an prop of the same name is to use
     curly braces
@@ -47,6 +50,8 @@ $ npm run dev --prefix ./82-two-way-binding-reffresher
 ```bash
 $ npm run dev --prefix ./83-understanding-custom-component-bindings
 ```
+
+[App.svelte](./83-understanding-custom-component-bindings/src/App.svelte)
 
 - two-way component binding can be configured via a parent component using the
     `bind` keyword on the child component
@@ -102,6 +107,8 @@ $ npm run dev --prefix ./83-understanding-custom-component-bindings
 $ npm run dev --prefix ./84-relying-on-automatic-number-conversion
 ```
 
+[App.svelte](./84-relying-on-automatic-number-conversion/src/App.svelte)
+
 - for inputs of type number, if the value is 2-way bound, Svelte will convert
     the value from the default `string` type to `number`
 
@@ -110,6 +117,8 @@ $ npm run dev --prefix ./84-relying-on-automatic-number-conversion
 ```bash
 $ npm run dev --prefix ./85-binding-checkboxes-and-radio-buttons
 ```
+
+[App.svelte](./85-binding-checkboxes-and-radio-buttons/src/App.svelte)
 
 - `checkbox` inputs are not bound using the `value` attribute as `text` inputs
     are
@@ -175,6 +184,8 @@ $ npm run dev --prefix ./85-binding-checkboxes-and-radio-buttons
 $ npm run dev --prefix ./86-binding-select-dropdowns
 ```
 
+[App.svelte](./86-binding-select-dropdowns/src/App.svelte)
+
 - `select` bind to the value attribute in the same way text inputs are
 
 ## 87. Binding to element references
@@ -182,6 +193,8 @@ $ npm run dev --prefix ./86-binding-select-dropdowns
 ```bash
 $ npm run dev --prefix ./87-binding-to-element-references
 ```
+
+[App.svelte](./87-binding-to-element-references/src/App.svelte)
 
 - one can create a reference to an element in the DOM using the `bind:this`
     syntax:
@@ -204,3 +217,19 @@ $ npm run dev --prefix ./87-binding-to-element-references
 - `console.dir` is useful for printing out objects. This is especially useful
     for DOM nodes, as developer consoles generally print them out as html when
     using `console.log`
+
+## 88. Binding to component references
+
+```bash
+$ npm run dev --prefix ./88-binding-to-component-references
+```
+
+[App.svelte](./88-binding-to-component-references/src/App.svelte)
+
+- components can be bound to in the same way that elements are bound to with
+    the `bind:this` syntax
+- components can export values that can be accessed via the reference in the
+    parent component
+- this should generally be avoided, and a uni-directional dataflow approach
+    favoured to maintain sanity of the components
+
