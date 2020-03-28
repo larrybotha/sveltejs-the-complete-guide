@@ -11,6 +11,7 @@
 - [85. Binding checkboxes and radio buttons](#85-binding-checkboxes-and-radio-buttons)
 - [86. Binding `<select>` dropdowns](#86-binding-select-dropdowns)
 - [87. Binding to element references](#87-binding-to-element-references)
+- [88. Binding to component references](#88-binding-to-component-references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -204,3 +205,17 @@ $ npm run dev --prefix ./87-binding-to-element-references
 - `console.dir` is useful for printing out objects. This is especially useful
     for DOM nodes, as developer consoles generally print them out as html when
     using `console.log`
+
+## 88. Binding to component references
+
+```bash
+$ npm run dev --prefix ./88-binding-to-component-references
+```
+
+- components can be bound to in the same way that elements are bound to with
+    the `bind:this` syntax
+- components can export values that can be accessed via the reference in the
+    parent component
+- this should generally be avoided, and a uni-directional dataflow approach
+    favoured to maintain sanity of the components
+
