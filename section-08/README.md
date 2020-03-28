@@ -8,6 +8,7 @@
 - [82. Two-way binding refresher](#82-two-way-binding-refresher)
 - [83. Understanding custom component bindings](#83-understanding-custom-component-bindings)
 - [84. Relying on automatic number conversion](#84-relying-on-automatic-number-conversion)
+- [85. Binding checkboxes and radio buttons](#85-binding-checkboxes-and-radio-buttons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -101,3 +102,67 @@ $ npm run dev --prefix ./84-relying-on-automatic-number-conversion
 
 - for inputs of type number, if the value is 2-way bound, Svelte will convert
     the value from the default `string` type to `number`
+
+## 85. Binding checkboxes and radio buttons
+
+```bash
+$ npm run dev --prefix ./85-binding-checkboxes-and-radio-buttons
+```
+
+- `checkbox` inputs are not bound using the `value` attribute as `text` inputs
+    are
+    - instead, one binds to the `checked` attribute:
+
+        ```svelte
+        <script>
+          let isChecked;
+        </script>
+
+        <input type="checkbox" bind:checked={isChecked} />
+        ```
+- `radio` inputs are grouped together using the `bind:group={someValue}` syntax
+
+    ```svelte
+    <script>
+      // set initial group value
+      let groupValue = 'value-1';
+    </script>
+
+    <label>
+      <input type="radio" value="value-1" bind:group={groupValue} />
+      value 1
+    </label>
+
+    <label>
+      <input type="radio" value="value-2" bind:group={groupValue} />
+      value 2
+    </label>
+
+    <label>
+      <input type="radio" value="value-3" bind:group={groupValue} />
+      value 3
+    </label>
+    ```
+- groups of checkboxes can be managed in a similar way to grouped radios.
+    Instead of binding to a single value, they are bound to an array:
+
+    ```svelte
+    <script>
+      let checkboxValues = ['value-1']
+    </script>
+
+    <label>
+      <input type="checkbox" value="value-1" bind:group={checkboxValues} />
+      value 1
+    </label>
+
+    <label>
+      <input type="checkbox" value="value-2" bind:group={checkboxValues} />
+      value 2
+    </label>
+
+    <label>
+      <input type="checkbox" value="value-3" bind:group={checkboxValues} />
+      value 3
+    </label>
+    ```
