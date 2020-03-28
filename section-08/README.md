@@ -10,6 +10,7 @@
 - [84. Relying on automatic number conversion](#84-relying-on-automatic-number-conversion)
 - [85. Binding checkboxes and radio buttons](#85-binding-checkboxes-and-radio-buttons)
 - [86. Binding `<select>` dropdowns](#86-binding-select-dropdowns)
+- [87. Binding to element references](#87-binding-to-element-references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -175,4 +176,31 @@ $ npm run dev --prefix ./86-binding-select-dropdowns
 ```
 
 - `select` bind to the value attribute in the same way text inputs are
-- the values of `option` elements can be strings, or objects
+
+## 87. Binding to element references
+
+```bash
+$ npm run dev --prefix ./87-binding-to-element-references
+```
+
+- one can create a reference to an element in the DOM using the `bind:this`
+    syntax:
+
+    ```svelte
+    <script>
+      let elementRef;
+
+      $: console.dir(elementRef)
+    </script>
+
+    <div bind:this={elementRef}>
+      my div
+    </div>
+    ```
+- this is useful for reading values from the DOM, such as classes, attributes,
+    DOM properties
+- this should not be used to manipulate the DOM - Svelte should only be used for
+    performing any state changes
+- `console.dir` is useful for printing out objects. This is especially useful
+    for DOM nodes, as developer consoles generally print them out as html when
+    using `console.log`
