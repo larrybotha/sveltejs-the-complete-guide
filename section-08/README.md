@@ -12,6 +12,7 @@
 - [86. Binding `<select>` dropdowns](#86-binding-select-dropdowns)
 - [87. Binding to element references](#87-binding-to-element-references)
 - [88. Binding to component references](#88-binding-to-component-references)
+- [89. Validating forms and inputs](#89-validating-forms-and-inputs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -233,3 +234,13 @@ $ npm run dev --prefix ./88-binding-to-component-references
 - this should generally be avoided, and a uni-directional dataflow approach
     favoured to maintain sanity of the components
 
+## 89. Validating forms and inputs
+
+```bash
+$ npm run dev --prefix ./89-validating-forms-and-inputs
+```
+
+[App.svelte](./89-validating-forms-and-inputs/src/App.svelte)
+
+- Svelte provides no form validation; it's up to the developer to write their
+    own validation, or to use an existing validation library
