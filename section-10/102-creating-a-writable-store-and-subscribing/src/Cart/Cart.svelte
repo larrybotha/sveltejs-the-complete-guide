@@ -1,18 +1,19 @@
 <script>
   import CartItem from "./CartItem.svelte";
+  import { cartStore } from "./cart-store.js";
 
-  export let items = [
-    {
-      id: "p1",
-      title: "Test",
-      price: 9.99
-    },
-    {
-      id: "p2",
-      title: "Test",
-      price: 9.99
-    }
-  ];
+  let items = [];
+
+  /**
+   * once imported, one can subscribe to a store, setting local variables to the
+   * value in the store
+   *
+   * There's a way to automatically subscribe to the store, but this is at least
+   * the naive approach underlying the automatic subscription covered later
+   */
+  cartStore.subscribe(xs => {
+    items = xs;
+  });
 </script>
 
 <style>

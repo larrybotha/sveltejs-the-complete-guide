@@ -46,6 +46,7 @@
     <h2>{price}</h2>
     <p>{description}</p>
   </div>
+
   <div>
     <Button on:click={addToCart}>Add to Cart</Button>
   </div>
