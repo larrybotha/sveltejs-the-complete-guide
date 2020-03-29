@@ -19,7 +19,7 @@
 ## 82. Two-way binding refresher
 
 ```bash
-$ npm run dev --prefix ./82-two-way-binding-reffresher
+$ npm run dev --prefix ./82-two-way-binding-refresher
 ```
 
 [App.svelte](./82-two-way-binding-reffresher/src/App.svelte)
