@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import { isValidEmail } from \"./helpers\";\n\n  let email = \"\";\n  let formIsValid = false;\n\n  $: if (isValidEmail(email)) {\n    formIsValid = true;\n  } else {\n    formIsValid = false;\n  }\n</script>\n\n<style>\n  .valid {\n    border-color: green;\n  }\n\n  .invalid {\n    border-color: red;\n  }\n</style>\n\n<form on:submit|preventDefault>\n  <input\n    type=\"email\"\n    bind:value={email}\n    class={isValidEmail(email) ? 'valid' : 'invalid'} />\n\n  <button type=\"submit\" disabled={!formIsValid}>submit</button>\n</form>\n"
+  ],
+  "names": [],
+  "mappings": "AAcE,MAAM,cAAC,CAAC,AACN,YAAY,CAAE,KAAK,AACrB,CAAC,AAED,QAAQ,cAAC,CAAC,AACR,YAAY,CAAE,GAAG,AACnB,CAAC"
+}
