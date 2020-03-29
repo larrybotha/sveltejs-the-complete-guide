@@ -8,6 +8,7 @@
 - [102. Creating a writable store and subscribing](#102-creating-a-writable-store-and-subscribing)
 - [103. Updating store data](#103-updating-store-data)
 - [105. Managing store subscriptions](#105-managing-store-subscriptions)
+- [106. Using autosubscriptions](#106-using-autosubscriptions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -91,3 +92,24 @@ $ npm run dev --prefix ./105-managing-store-subscriptions
     </script>
     ```
 
+## 106. Using autosubscriptions
+
+```bash
+$ npm run dev --prefix ./106-using-autosubscriptions
+```
+
+[App.svelte](./106-using-autosubscriptions/src/App.svelte)
+
+- instead of manually subscribing to a store using `store.subscribe`, Svelte
+    allows one to automatically subscribe by prepending the store with a `$`
+
+    ```svelte
+    <script>
+      import {myStore} from './store'
+    </script>
+
+    <div>
+      {$myStore}
+    </div>
+    ```
+- this also automatically unsubscribes the store when the component is destroyed
