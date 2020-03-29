@@ -21,7 +21,7 @@
 ## 82. Two-way binding refresher
 
 ```bash
-$ npm run dev --prefix ./82-two-way-binding-reffresher
+$ npm run dev --prefix ./82-two-way-binding-refresher
 ```
 
 - a shortcut for binding a value to an prop of the same name is to use
