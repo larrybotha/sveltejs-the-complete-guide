@@ -6,6 +6,7 @@
 **Table of Contents**
 
 - [102. Creating a writable store and subscribing](#102-creating-a-writable-store-and-subscribing)
+- [103. Updating store data](#103-updating-store-data)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -48,3 +49,20 @@ $ npm run dev --prefix ./102-creating-a-writable-store-and-subscribing
       value is {value}
     </div>
     ```
+
+## 103. Updating store data
+
+```bash
+$ npm run dev --prefix ./103-updating-store-data
+```
+
+[App.svelte](./103-updating-store-data/src/App.svelte)
+
+- the values in writable stores can be updated in 2 ways, either through
+    `store.set`, or `store.update`
+- `store.set` accepts a single value that replaces the value in the store
+- `store.update` works in a similar way to React's `setState(callback)` callback
+    syntax - it accepts a function which has the current value of the store as
+    an argument, and expects a new value to be returned to update the store's
+    value with
+
