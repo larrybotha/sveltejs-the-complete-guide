@@ -7,6 +7,7 @@
 
 - [102. Creating a writable store and subscribing](#102-creating-a-writable-store-and-subscribing)
 - [103. Updating store data](#103-updating-store-data)
+- [105. Managing store subscriptions](#105-managing-store-subscriptions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -65,4 +66,28 @@ $ npm run dev --prefix ./103-updating-store-data
     syntax - it accepts a function which has the current value of the store as
     an argument, and expects a new value to be returned to update the store's
     value with
+
+## 105. Managing store subscriptions
+
+```bash
+$ npm run dev --prefix ./105-managing-store-subscriptions
+```
+
+[App.svelte](./105-managing-store-subscriptions/src/App.svelte)
+
+- every store that is subscribed to should be unsubscribed from when the
+    component is destroyed
+- this can be done using Svelte's `onDestroy` export
+
+    ```svelte
+    <script>
+      import {onDestroy} from 'svelte';
+
+      import {myStore} from './store'
+
+      const unsubscribe = myStore.subscribe(//...)
+
+      onDestroy(unsubscribe)
+    </script>
+    ```
 
