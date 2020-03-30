@@ -10,6 +10,7 @@
 - [105. Managing store subscriptions](#105-managing-store-subscriptions)
 - [106. Using autosubscriptions](#106-using-autosubscriptions)
 - [107. A second store](#107-a-second-store)
+- [108. Subscribing for a short period](#108-subscribing-for-a-short-period)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -123,3 +124,57 @@ $ npm run dev --prefix ./107-a-second-store
 
 [App.svelte](./107-a-second-store/src/App.svelte)
 
+
+## 108. Subscribing for a short period
+
+```bash
+$ npm run dev --prefix ./108-subscribing-for-a-short-period
+```
+
+[App.svelte](./108-subscribing-for-a-short-period/src/App.svelte)
+
+- for components where we only need to retrieve a value from the store once, we
+    may want to unsubscribe from the store immediately. We could manually handle
+    this inside Svelte's `onMount` lifecycle hook:
+
+    ```svelte
+    <script>
+      import {onMount} from 'svelte'
+
+      import {myStore} from './store'
+
+      let val;
+
+      onMount(() => {
+        const unsubscribe = myStore.subscribe(value => {
+          val = value
+        })
+
+        unsubscribe()
+      })
+    </script>
+    ```
+
+    This is a lot of boilerplate every time we want a value from a store, but
+    Svelte provides a convenience function to recreate this behaviour...
+- we can import `get` from Svelte's `store` export. `get` does the following:
+
+    - accepts a store as an argument
+    - subscribes to that store
+    - returns the value inside that store
+    - unsubscribes from the store
+
+    ```svelte
+    <script>
+      import {onMount} from 'svelte'
+      import {get} from 'svelte/store'
+
+      import {myStore} from './store'
+
+      let val;
+
+      onMount(() => {
+        val = get(myStore)
+      })
+    </script>
+    ```
