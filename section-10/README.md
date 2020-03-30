@@ -9,6 +9,7 @@
 - [103. Updating store data](#103-updating-store-data)
 - [105. Managing store subscriptions](#105-managing-store-subscriptions)
 - [106. Using autosubscriptions](#106-using-autosubscriptions)
+- [107. A second store](#107-a-second-store)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -113,3 +114,12 @@ $ npm run dev --prefix ./106-using-autosubscriptions
     </div>
     ```
 - this also automatically unsubscribes the store when the component is destroyed
+
+## 107. A second store
+
+```bash
+$ npm run dev --prefix ./107-a-second-store
+```
+
+[App.svelte](./107-a-second-store/src/App.svelte)
+
