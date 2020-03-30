@@ -131,7 +131,7 @@ $ npm run dev --prefix ./107-a-second-store
 $ npm run dev --prefix ./108-subscribing-for-a-short-period
 ```
 
-[App.svelte](./108-subscribing-for-a-short-period/src/App.svelte)
+[CartItem.svelte](./108-subscribing-for-a-short-period/src/Cart/CartItem.svelte)
 
 - for components where we only need to retrieve a value from the store once, we
     may want to unsubscribe from the store immediately. We could manually handle
