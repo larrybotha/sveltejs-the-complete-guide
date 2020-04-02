@@ -188,3 +188,13 @@ $ npm run dev --prefix ./109-understanding-readable-stores
 
 [App.svelte](./109-understanding-readable-stores/src/App.svelte)
 
+- readable stores are useful for values that should or can only be read by
+    components
+    - timer values
+    - mouse positions
+    - browser dimensions
+- a readable store accepts two arguments
+  1. the initial value of the store
+  2. a callback with a `set` function
+    - the `set` function is what is responsible for updating the value of the
+        store
