@@ -198,3 +198,31 @@ $ npm run dev --prefix ./109-understanding-readable-stores
   2. a callback with a `set` function
     - the `set` function is what is responsible for updating the value of the
         store
+
+##. 110. Unlimited power with custom stores
+
+```bash
+$ npm run dev --prefix ./110-unlimited-power-with-custom-stores
+```
+
+[App.svelte](./110-unlimited-power-with-custom-stores/src/App.svelte)
+
+- when creating a writable store, the object returned provides `set`,
+    `update`, and `subscribe` methods. The only method required here is
+    `subscribe`
+- with this knowledge, we can create custom stores that need only adhere to
+    returning an object that has a `subscribe` method
+- we can then abstract other logic that would have to be done inside components
+    using the `set` and `update` methods to the store itself:
+
+    ```javascript
+    import {writable} from 'svelte/store'
+
+    const counterStore = writable(0)
+
+    return {
+      subscribe: counterStore.subscribe,
+      increment: () => {counterStore.update(n => n + 1)},
+      decrement: () => {counterStore.update(n => n - 1)},
+    }
+    ```
