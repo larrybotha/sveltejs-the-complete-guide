@@ -1,24 +1,45 @@
 <script>
-  import Cart from "./Cart/Cart.svelte";
-  import Products from "./Products/Products.svelte";
-  import Button from "./UI/Button.svelte";
+  import { onDestroy } from "svelte";
 
-  let showCart = true;
+  import { mouseStore } from "./mouse-store";
+
+  import Timer from "./timer-output.svelte";
+
+  let timers = [];
+  let mousePosition;
+
+  function addTimer() {
+    timers = timers.concat(timers.length);
+  }
+
+  function removeTimer(i) {
+    return function reduceTimerClosure() {
+      timers = timers.filter((_, j) => i !== j);
+    };
+  }
+
+  /**
+   * Manually subscribe to this store
+   */
+  const unsubscribe = mouseStore.subscribe(val => {
+    mousePosition = val;
+  });
+
+  onDestroy(unsubscribe);
 </script>
 
-<Button on:click={() => (showCart = !showCart)}>toggle cart</Button>
+mouse position:
+<pre>{JSON.stringify(mousePosition, null, 2)}</pre>
 
-<!--
-    Cart contains a subscription
+<hr />
 
-    If that subscription is not unsubscribed, every time the cart is mounted it
-    will create a new subscription alongside the old subscription.
+<button on:click={addTimer}>add timer</button>
+<hr />
 
-    For any component that has a subscription, it should always unsubscribe from
-    that subscription using Svelte's onDestroy export
-  -->
-{#if showCart}
-  <Cart />
-{/if}
+{#each timers as timer, i}
+  <div>
+    <Timer />
 
-<Products />
+    <button on:click={removeTimer(i)}>remove timer</button>
+  </div>
+{/each}
