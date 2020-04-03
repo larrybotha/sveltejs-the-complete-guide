@@ -226,3 +226,18 @@ $ npm run dev --prefix ./110-unlimited-power-with-custom-stores
       decrement: () => {counterStore.update(n => n - 1)},
     }
     ```
+
+##. 112. Derived store and store bindings
+
+```bash
+$ npm run dev --prefix ./112-derived-store-and-store-bindings
+```
+
+[App.svelte](./112-derived-store-and-store-bindings/src/App.svelte)
+
+- derived stores accept an existing arbitrary number of stores, and allow one to
+    create a new store derived from those values
+- this is much the same as with creating a simple observable from which more
+    complex observables can be derived
+- one can use the `bind:[attribute]={$store}` syntax to bind a store's value to
+    an attribute
