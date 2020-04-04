@@ -6,7 +6,7 @@
 **Table of Contents**
 
 - [128. Animating values with a tweened store](#128-animating-values-with-a-tweened-store)
-- [130. Using a spring store instead](#130-using-a-spring-store-instead)
+- [129. Using a spring store instead](#129-using-a-spring-store-instead)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -59,13 +59,13 @@ $ npm run dev --prefix ./128-using-a-spring-store
     ```
 - a `tweened` store returns a promise when `update` or `set` are used
 
-## 130. Using a spring store instead
+## 129. Using a spring store instead
 
 ```bash
-$ npm run dev --prefix ./130-using-a-spring-store-instead
+$ npm run dev --prefix ./129-using-a-spring-store-instead
 ```
 
-[App.svelte](./130-using-a-spring-store-instead/src/App.svelte)
+[App.svelte](./129-using-a-spring-store-instead/src/App.svelte)
 
 - `spring` can replace a `writable` store in place:
 
