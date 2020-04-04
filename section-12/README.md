@@ -6,6 +6,7 @@
 **Table of Contents**
 
 - [129. Animating values with a tweened store](#129-animating-values-with-a-tweened-store)
+- [130. Using a spring store instead](#130-using-a-spring-store-instead)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -56,3 +57,38 @@ $ npm run dev --prefix ./129-using-a-spring-store
         // do something with start and end based on time
       }
     ```
+- a `tweened` store returns a promise when `update` or `set` are used
+
+## 130. Using a spring store instead
+
+```bash
+$ npm run dev --prefix ./130-using-a-spring-store-instead
+```
+
+[App.svelte](./130-using-a-spring-store-instead/src/App.svelte)
+
+- `spring` can replace a `writable` store in place:
+
+    ```javascript
+    import {writable} from 'svelte/store'
+    import {spring} from 'svelte/motion'
+
+    const writableValue = writable({ x: 0 })
+    const springableValue = spring({ x: 0 })
+    ```
+- `spring` accepts `damping`, `stiffness`, and `precision` values in its options
+    config
+- unlike the `tweened` store, `damping`, `stiffness`, and `precision` are
+    updated on the store directly:
+
+    ```javascript
+    import {spring} from 'svelte/motion'
+
+    const springableValue = spring({ x: 0 }, {damping: .5})
+
+    springableValue.damping = .2
+    ```
+
+    Updating these properties takes effect immediately
+- like `tweened` stores, `update` and `set` returns a promise that is resolved
+    once the animation completes
