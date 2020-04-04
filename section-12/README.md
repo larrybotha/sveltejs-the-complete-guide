@@ -5,18 +5,18 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [129. Animating values with a tweened store](#129-animating-values-with-a-tweened-store)
+- [128. Animating values with a tweened store](#128-animating-values-with-a-tweened-store)
 - [130. Using a spring store instead](#130-using-a-spring-store-instead)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## 129. Animating values with a tweened store
+## 128. Animating values with a tweened store
 
 ```bash
-$ npm run dev --prefix ./129-using-a-spring-store
+$ npm run dev --prefix ./128-using-a-spring-store
 ```
 
-[App.svelte](./129-using-a-spring-store/src/App.svelte)
+[App.svelte](./128-using-a-spring-store/src/App.svelte)
 
 - Svelte allows one to import a function from `svelte/motion` that creates a
     store for tweening values.
