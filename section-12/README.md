@@ -7,6 +7,7 @@
 
 - [128. Animating values with a tweened store](#128-animating-values-with-a-tweened-store)
 - [129. Using a spring store instead](#129-using-a-spring-store-instead)
+- [131. Element transitions](#131-element-transitions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -34,7 +35,7 @@ $ npm run dev --prefix ./128-using-a-spring-store
 
     ```javascript
     import {tweened} from 'svelte/motion'
-    import {cubicIn} from 'svelte/easings'
+    import {cubicIn} from 'svelte/easing'
 
     const options = {
       delay: 0,
@@ -92,3 +93,19 @@ $ npm run dev --prefix ./129-using-a-spring-store-instead
     Updating these properties takes effect immediately
 - like `tweened` stores, `update` and `set` returns a promise that is resolved
     once the animation completes
+
+## 131. Element transitions
+
+
+```bash
+$ npm run dev --prefix ./131-element-transitions
+```
+
+[App.svelte](./131-element-transitions/src/App.svelte)
+
+- Svelte has a number of helpers for element transitions - when elements are
+    added to and removed from the DOM
+- transitions are imported from `svelte/transition`
+- fade, blur, fly, slide, and scale can all be used in the same manner
+- crossfade returns a tuple to be used with the `in:` and `out:` props
+- draw is a transition used specifically for animating svg paths
