@@ -10,6 +10,7 @@
 - [131. Element transitions](#131-element-transitions)
 - [132. More on transitions](#132-more-on-transitions)
 - [133. Using different in and out animations](#133-using-different-in-and-out-animations)
+- [134. Animating passive (affected) items](#134-animating-passive-affected-items)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -149,3 +150,15 @@ $ npm run dev --prefix ./133-using-different-in-and-out-transitions
     transitions for entering and exiting the dom
 - different in and out transitions do not unwind like animations defined using
     the `transition` property
+
+## 134. Animating passive (affected) items
+
+```bash
+$ npm run dev --prefix ./134-animating-passive-items
+```
+
+[App.svelte](./134-animating-passive-items/src/App.svelte)
+
+- `animate:flip` can be used to animate items that are already in the dom, but
+    whose layout are affected by the addition / removal of other elements
+- `flip` is imported from `svelte/animate`
