@@ -8,6 +8,7 @@
 - [128. Animating values with a tweened store](#128-animating-values-with-a-tweened-store)
 - [129. Using a spring store instead](#129-using-a-spring-store-instead)
 - [131. Element transitions](#131-element-transitions)
+- [132. More on transitions](#132-more-on-transitions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -96,7 +97,6 @@ $ npm run dev --prefix ./129-using-a-spring-store-instead
 
 ## 131. Element transitions
 
-
 ```bash
 $ npm run dev --prefix ./131-element-transitions
 ```
@@ -109,3 +109,29 @@ $ npm run dev --prefix ./131-element-transitions
 - fade, blur, fly, slide, and scale can all be used in the same manner
 - crossfade returns a tuple to be used with the `in:` and `out:` props
 - draw is a transition used specifically for animating svg paths
+
+## 132. More on transitions
+
+```bash
+$ npm run dev --prefix ./132-more-on-transitions
+```
+
+[App.svelte](./132-more-on-transitions/src/App.svelte)
+
+- transitions are cancelable, and will unwind from their current position
+- transitions have events that can be subscribed to using the same `on:` syntax:
+    - `on:introstart` - when an element is transitioning in
+    - `on:introend` - when an element has transitioned in
+    - `on:outrostart` - when an element is transitioning out
+    - `on:outrostart` - when an element has transitioned out
+- transitions can be scoped only to the visibility of the element on which the
+    transition is defined. By default, if an element has a transition property,
+    and its containing scope is added to the dom, that element will transition
+    in. To ensure that the element only transitions when it is itself added to
+    the dom, the `local` modifier can be added to the transition:
+
+    ```svelte
+    <div transition:fly|local>
+      content
+    </div>
+    ```
