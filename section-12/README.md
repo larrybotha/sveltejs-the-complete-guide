@@ -9,6 +9,7 @@
 - [129. Using a spring store instead](#129-using-a-spring-store-instead)
 - [131. Element transitions](#131-element-transitions)
 - [132. More on transitions](#132-more-on-transitions)
+- [133. Using different in and out animations](#133-using-different-in-and-out-animations)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -135,3 +136,16 @@ $ npm run dev --prefix ./132-more-on-transitions
       content
     </div>
     ```
+
+## 133. Using different in and out animations
+
+```bash
+$ npm run dev --prefix ./133-using-different-in-and-out-transitions
+```
+
+[App.svelte](./133-using-different-in-and-out-transitions/src/App.svelte)
+
+- `in:` and `out:` can be used instead of `transition:` to define different
+    transitions for entering and exiting the dom
+- different in and out transitions do not unwind like animations defined using
+    the `transition` property
