@@ -11,6 +11,7 @@
 - [132. More on transitions](#132-more-on-transitions)
 - [133. Using different in and out animations](#133-using-different-in-and-out-animations)
 - [134. Animating passive (affected) items](#134-animating-passive-affected-items)
+- [135. Deferred transitions](#135-deferred-transitions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -162,3 +163,32 @@ $ npm run dev --prefix ./134-animating-passive-items
 - `animate:flip` can be used to animate items that are already in the dom, but
     whose layout are affected by the addition / removal of other elements
 - `flip` is imported from `svelte/animate`
+
+## 135. Deferred transitions
+
+```bash
+$ npm run dev --prefix ./135-deferred-transitions
+```
+
+[App.svelte](./135-deferred-transitions/src/App.svelte)
+
+- `crossfade` can be used to transition items between lists (... what else?)
+- `crossfade` is not used in the same manner as other transitions. It needs to
+    be called during the initialisation phase of the component, as it returns a
+    `send` and `receive` function in a tuple.
+
+    These functions are then used with the `in:` and `out:` props on the
+    components that going to be crossfaded. `key` properties that uniquely
+    define each item should be provided as values
+- `crossfade` accepts an options object with `duration` and `fallback`
+    properties:
+    - `duration` determines the duration of a transition from one location to
+        another. It accepts a numeric value, or a function that accepts the
+        distance the element will need to travel
+    - `fallback` is a function used when an item enters and exits the dom. It
+        accepts the node, and the object configured at `in:receive` and `out:send`.
+        The function expects a return object with the following properties:
+
+        - `duration` - number
+        - `easing` - function
+        - `css` - string
