@@ -6,6 +6,7 @@
 **Table of Contents**
 
 - [164. Dynamic components](#164-dynamic-components)
+- [165. Recursive components](#165-recursive-components)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -38,3 +39,14 @@ $ npm run dev --prefix ./164-dynamic-components
     ```
 - the component is bound to the `this` prop, and props can be applied
     dynamically to `<svelte:component />` too
+
+## 165. Recursive components
+
+```bash
+$ npm run dev --prefix ./165-recursive-components
+```
+
+[App.svelte](./165-recursive-components/src/App.svelte)
+
+- Svelte allows for components to render themselves within themselves using the
+    internal cusom component `<svelte:self />`
