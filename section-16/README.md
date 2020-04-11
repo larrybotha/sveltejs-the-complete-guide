@@ -7,6 +7,7 @@
 
 - [164. Dynamic components](#164-dynamic-components)
 - [165. Recursive components](#165-recursive-components)
+- [166. Accessing window, body, and head](#166-accessing-window-body-and-head)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -50,3 +51,28 @@ $ npm run dev --prefix ./165-recursive-components
 
 - Svelte allows for components to render themselves within themselves using the
     internal cusom component `<svelte:self />`
+
+## 166. Accessing window, body, and head
+
+```bash
+$ npm run dev --prefix ./166-accessing-window-body-and-head
+```
+
+[App.svelte](./166-accessing-window-body-and-head/src/App.svelte)
+
+- Svelte has a number of internal components making it easier to work with
+    document elements and the window:
+    - `<svelte:window />`
+    - `<svelte:body />`
+    - `<svelte:head />`
+- `<svelte:window />` makes it convenient to bind to window-level events without
+    relying on Svelte's `onMount` lifecycle hook. You may also bind to the
+    following properties:
+    - `scrollY` and `scrollX`
+    - `innerWidth` and `innerHeight`
+    - `outerWidth` and `outerHeight`
+    - `online`
+- `<svelte:body />` makes it convenient to bind to events which may be more
+    applicable to the body of the document, such as the height of the document
+- `<svelte:head />` allows one to manipulate head-level content, such as the
+    `title` tag
