@@ -66,7 +66,12 @@ $ npm run dev --prefix ./166-accessing-window-body-and-head
     - `<svelte:body />`
     - `<svelte:head />`
 - `<svelte:window />` makes it convenient to bind to window-level events without
-    relying on Svelte's `onMount` lifecycle hook
+    relying on Svelte's `onMount` lifecycle hook. You may also bind to the
+    following properties:
+    - `scrollY` and `scrollX`
+    - `innerWidth` and `innerHeight`
+    - `outerWidth` and `outerHeight`
+    - `online`
 - `<svelte:body />` makes it convenient to bind to events which may be more
     applicable to the body of the document, such as the height of the document
 - `<svelte:head />` allows one to manipulate head-level content, such as the

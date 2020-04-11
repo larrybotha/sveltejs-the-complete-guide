@@ -5,6 +5,7 @@
   let description = "description";
   let pageYOffset = 0;
   let offsetHeight;
+  let online;
   $: scrollPercentage = (pageYOffset / offsetHeight) * 100;
 
   function handleResize() {
@@ -38,7 +39,8 @@
     offsetHeight = document.body.offsetHeight;
   }}
   on:resize={handleResize}
-  bind:scrollY={pageYOffset} />
+  bind:scrollY={pageYOffset}
+  bind:online />
 
 <!--
   Body-level events can be bound using Svelte's <svelte:body /> internal
@@ -59,6 +61,8 @@
   <h1>Window dims</h1>
 
   <pre>{JSON.stringify(dims, null, 2)}</pre>
+
+  <p>online status: {Boolean(online)}</p>
 
   <h1>Mouse coords</h1>
 
