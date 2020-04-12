@@ -13,6 +13,7 @@
 - [87. Binding to element references](#87-binding-to-element-references)
 - [88. Binding to component references](#88-binding-to-component-references)
 - [89. Validating forms and inputs](#89-validating-forms-and-inputs)
+- [8x. Actions](#8x-actions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -244,3 +245,53 @@ $ npm run dev --prefix ./89-validating-forms-and-inputs
 
 - Svelte provides no form validation; it's up to the developer to write their
     own validation, or to use an existing validation library
+
+## 8x. Actions
+
+```bash
+$ npm run dev --prefix ./8x-actions
+```
+
+[App.svelte](./8x-actions/src/App.svelte)
+
+- actions are like lifecycle hooks on elements
+- to use an action:
+    - create a function which accepts a node (the node the action will be bound
+        to), and a second parameters argument. This function can return an object
+        with the following properties:
+        - `update` - a function which accepts parameters when the parameters
+            passed in on initialisation change
+        - `destroy` - a function that is called when the element is umounted
+    - bind the action to the element you want to provide behaviour for, using
+        Svelte's `use:[someAction]` syntax:
+
+        ```svelte
+        <script>
+          function myAction(node, params) {
+            // do something with the node when it mounts
+
+            return {
+              update(params) {
+                // do something when params change
+              },
+
+              destroy() {
+                // perform any clean up when the node is removed
+              }
+            }
+          }
+        </script>
+
+        <div use:myAction>
+          my div with some actions
+        </div>
+        ```
+- actions are useful for extending behaviour of elements:
+    - binding 3rd party libs, such as date pickers, to elements
+    - lazy-loading images
+      - e.g. using intersection observer to determine whether an image is
+          scrolled into view or not, and requesting the asset only when it is
+    - adding custom event handlers
+      - the action can dispatch custom events, which the element can then bind
+          to, allowing the parent of that element to perform actions based on
+          those events
