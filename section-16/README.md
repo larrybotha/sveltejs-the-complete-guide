@@ -1,4 +1,4 @@
-# Section 12: Motion, transitions, and animations
+# Section 16: Special elements
 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
