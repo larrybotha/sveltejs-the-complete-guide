@@ -5,6 +5,7 @@
 **Table of Contents**
 
 - [173. Filenames and routes](#173-filenames-and-routes)
+- [174. Error and layout pages](#174-error-and-layout-pages)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -57,3 +58,20 @@ $ cd 173-filenames-and-routes && node --inspect $(npm bin)/sapper dev
           }
         </script>
         ```
+
+## 174. Error and layout pages
+
+```bash
+$ cd 174-error-and-layout-pages && node --inspect $(npm bin)/sapper dev
+```
+
+[App.svelte](./174-error-and-layout-pages/src/App.svelte)
+
+- Layouts define the structure for the tree below where they are defined. A
+    layout file is defined by naming it `_layout.svelte`
+- Layouts can be nested within the tree structure
+- a top level Error file can be defined which displays errors. It is defined
+    using `_error.svelte`, and resides in the root of the `src/routes` folder
+- nesting errors doesn't work in the same way as nesting layouts. Error
+    components further down the tree are treated in the same way as other
+    components, and need to be explicitly imported
