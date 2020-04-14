@@ -6,6 +6,8 @@
 
 - [173. Filenames and routes](#173-filenames-and-routes)
 - [174. Error and layout pages](#174-error-and-layout-pages)
+- [175. Preloading in components](#175-preloading-in-components)
+- [176. Pre-fetching data](#176-pre-fetching-data)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -75,3 +77,20 @@ $ cd 174-error-and-layout-pages && node --inspect $(npm bin)/sapper dev
 - nesting errors doesn't work in the same way as nesting layouts. Error
     components further down the tree are treated in the same way as other
     components, and need to be explicitly imported
+
+## 175. Preloading in components
+
+- use Sapper's `export async function preload() { // fetch data from server }` when
+    preloading data that needs to be available for SEO reasons
+- for everything else, one can use `onMount` to fetch data
+
+## 176. Pre-fetching data
+
+- Sapper's `preload` function is run on both the server and the client
+- When a page is requested from the client, content is loaded by the server by
+    calling `preload`.  Once that page renders, and is hydrated, the client then
+    takes over, and any new page loads will result in `preload` being called
+    from the client
+- `preload` uses `this.fetch` instead of `fetch` because the `fetch` API is not
+    available on the server. Sapper addresses this by providing its own fetch
+    implementation which polyfills that server-side requests with the same API.
